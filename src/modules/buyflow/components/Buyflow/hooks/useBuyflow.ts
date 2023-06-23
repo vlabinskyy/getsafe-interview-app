@@ -11,7 +11,7 @@ export function useBuyFlow(params: BuyflowProps) {
 
   useEffect(() => {
     actions.clearFormValues();
-  }, []);
+  }, [actions]);
 
   const wizardData = useBuyFlowWizard({
     defaultStep: BuyflowSteps.EMAIL,

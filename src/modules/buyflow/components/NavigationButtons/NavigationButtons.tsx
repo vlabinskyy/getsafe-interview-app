@@ -7,7 +7,7 @@ export const NavigationButtons = () => {
 
   return (
     <>
-      {!isFirstStep && <button onClick={navigateToPrevStep}>Prev</button>}
+      {!isFirstStep && <button onClick={navigateToPrevStep}>Previous</button>}
       {!isLastStep && <button type="submit">Next</button>}
     </>
   );

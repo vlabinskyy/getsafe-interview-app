@@ -5,10 +5,9 @@ import { useParams } from 'react-router-dom';
 
 const BuyflowModule: React.FC = () => {
   const { productId } = useParams<{ productId: string }>();
-  console.log(productId, 'productId');
 
   if (!PRODUCT_IDS_TO_NAMES[productId]) {
-    return <span>'Sorry, this product does not exist!'</span>;
+    return <span>Sorry, this product does not exist!</span>;
   }
 
   return (

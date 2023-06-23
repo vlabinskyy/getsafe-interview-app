@@ -2,7 +2,7 @@ import { useStateMachine } from 'little-state-machine';
 import { updateFormValues } from '../../../actions';
 import { FieldKeysType, fieldLabelMap } from '../../../constants';
 import { useMemo } from 'react';
-import { routes } from '../../../../../constants';
+import { routes } from '../../../../app/constants';
 import { useParams } from 'react-router-dom';
 
 export function useSummaryStep() {

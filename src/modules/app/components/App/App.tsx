@@ -2,9 +2,10 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
-import Buyflow from './modules/buyflow';
+import Buyflow from '../../../buyflow';
+import './index.css';
 import { createStore, StateMachineProvider } from 'little-state-machine';
-import { routes } from './constants';
+import { routes } from '../../constants';
 
 createStore({
   buyflow: {},
@@ -25,7 +26,7 @@ const App = () => {
               <Buyflow />
             </Route>
             <Route path="/">
-              <p>Welcome to Getsafe's Developer Insurance</p>
+              <p>Welcome to Getsafe's Insurances</p>
               <Link to={routes.DEVELOPER_INSURANCE}>Developer Insurance</Link>|
               <Link to={routes.DESIGNER_INSURANCE}>Designer Insurance</Link>
             </Route>
