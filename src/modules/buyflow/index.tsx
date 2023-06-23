@@ -1,17 +1,21 @@
 import React from 'react';
-import { useForm } from 'react-hook-form';
-import { BuyflowProps } from './components/Buyflow/interfaces';
 import { PRODUCT_IDS_TO_NAMES } from './constants';
 import Buyflow from './components/Buyflow';
+import { useParams } from 'react-router-dom';
 
-const BuyflowModule: React.FC<BuyflowProps> = (props) => {
-  const { handleSubmit } = useForm();
+const BuyflowModule: React.FC = () => {
+  const { productId } = useParams<{ productId: string }>();
+  console.log(productId, 'productId');
+
+  if (!PRODUCT_IDS_TO_NAMES[productId]) {
+    return <span>'Sorry, this product does not exist!'</span>;
+  }
 
   return (
-    <form onSubmit={handleSubmit((data) => console.log(data))}>
-      <h4>Buying {PRODUCT_IDS_TO_NAMES[props.productId]}</h4>
-      <Buyflow productId={props.productId} />
-    </form>
+    <>
+      <h4>Buying {PRODUCT_IDS_TO_NAMES[productId]}</h4>
+      <Buyflow productId={productId} />
+    </>
   );
 };
 

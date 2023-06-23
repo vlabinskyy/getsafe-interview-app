@@ -1,21 +1,23 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { useSummaryStep } from './hooks/useSummaryStep';
+import { NavigationButtons } from '../NavigationButtons';
 
-interface SummaryStepProps {
-  collectedData: {
-    email: string
-    age: number
-  }
-}
-
-export const SummaryStep: React.FC<SummaryStepProps> = (props) => {
+export const SummaryStep: React.FC = () => {
+  const { summaryValues, purchaseRoute } = useSummaryStep();
   return (
     <>
-      <div>Email: {props.collectedData.email}</div>
-      <div>Age: {props.collectedData.age}</div>
+      <dl>
+        {summaryValues.map((field) => (
+          <li key={field.key}>
+            {field.label}:{field.value}
+          </li>
+        ))}
+      </dl>
       <div>
-        <Link to="/purchased=dev_ins">Purchase</Link>
+        <Link to={purchaseRoute}>Purchase</Link>
       </div>
+      <NavigationButtons />
     </>
-  )
-}
+  );
+};

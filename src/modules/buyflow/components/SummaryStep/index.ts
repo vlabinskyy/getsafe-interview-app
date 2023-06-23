@@ -1,1 +1,1 @@
-export { SummaryStep as default } from './SummaryStep';
+export { SummaryStep } from './SummaryStep';
