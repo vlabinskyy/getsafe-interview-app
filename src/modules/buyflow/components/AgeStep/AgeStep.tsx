@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { AgeStepProps } from './interfaces';
-import { Field } from '../../../form-controls/components/Field/Field';
+import { Field } from '../../../form-controls/components';
 import { NavigationButtons } from '../NavigationButtons';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';

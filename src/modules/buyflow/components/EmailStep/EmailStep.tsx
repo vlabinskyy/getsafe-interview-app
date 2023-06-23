@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { useForm } from 'react-hook-form';
 import { useStateMachine } from 'little-state-machine';
 import { updateFormValues } from '../../actions';
-import { Field } from '../../../form-controls/components/Field/Field';
+import { Field } from '../../../form-controls/components';
 import { NavigationButtons } from '../NavigationButtons';
 import { BuyflowWizardContext } from '../Buyflow/constants';
 import { yupResolver } from '@hookform/resolvers/yup';
